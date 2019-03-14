@@ -117,37 +117,59 @@ def simulate(days=10, equity=500, position_size=100,
 
     price_map = algo.prices(algo.Universe)
 
-    df = price_map.get(bench)
-    if df is None:
+    bench_df = price_map.get(bench)
+    if bench_df is None:
 	
-        df = algo.prices([bench])[bench]
-    account.set_benchmark(df)
+        bench_df = algo.prices([bench])[bench]
+    account.set_benchmark(bench_df)
 
     orders = []
     tindex = price_map['AAPL'].index
+    print(tindex)
     account.update({}, tindex[-days - 1])
     api = SimulationAPI(account)
+    #print(account.cash)
+    #return
     for t in tindex[-days:]:
-        print(t)
-        print('df',df)
-        print(df[df.index < t])
-        snapshot = {
-            symbol: df[df.index < t]
-            for symbol, df in price_map.items()
+           # print(t)
+           # print('df',bench_df)
+           # print('DF INDEX FIRST \n', df[df.index < t])
+           # print('last index', df.index[-1])
+           # print('call for last index price?', df[df.index<t].index[-1])
+           # print('FUCKING UP CALL', t - df[df.index < t].index[-1])
+       # try
+
+          #  for symbol, df in price_map.items():
+          #      print(symbol)
+          #      print(df)
+          #      print(df.index[-1])
+          #      print(df[df.index < t])
+          #      break
+           # print(price_map.items().df)
+           # print(df.shape)
+           # print(df)
+            snapshot = {
+                symbol: df[df.index < t]
+                for symbol, df in price_map.items()
+            #   if df}
+                
             # sanity check to exclude stale prices
-            if t - df[df.index < t].index[-1] < pd.Timedelta('2 days')}
+                if df[df.index < t].size > 0 and  t - df[df.index < t].index[-1] < pd.Timedelta('2 days')}
 
         # before market opens
-        orders = algo.get_orders(api, snapshot,
+            orders = algo.get_orders(api, snapshot,
                                  position_size=position_size,
                                  max_positions=max_positions)
 
         # right after the market opens
-        for order in orders:
+            for order in orders:
             # buy at the open
-            price = price_map[order['symbol']].open[t]
-            account.fill_order(order, price, t)
+                price = price_map[order['symbol']].open[t]
+                account.fill_order(order, price, t)
 
-        account.update(snapshot, t)
-
+            account.update(snapshot, t)
+       ## except:
+            #print(df)
+            #print('symbol: ' , symbol)
+            #print('error: df size?', df.shape)
     return account
