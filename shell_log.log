@@ -1,0 +1,2 @@
+start
+./script.sh: line 4: 32548 Terminated              ./algo.py >> my_log.log
