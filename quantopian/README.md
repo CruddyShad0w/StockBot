@@ -29,3 +29,9 @@ or if you have a config.yaml
 ```
 pylivetrader run -f ./algo.py --backend-config config.yaml
 ```
+How to create a config.yaml:
+```
+$ cat > config.yaml
+keyid : xxx
+secret : xxx
+```
