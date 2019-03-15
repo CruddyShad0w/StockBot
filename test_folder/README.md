@@ -9,17 +9,29 @@ in a short time. Since the universe is SP500 which means there is some fundament
 the belief is that the price should be recovered to some extent.
 
 ## How to run
-
-Set up your API key in environment variables first.
-
-```
-$ export APCA_API_KEY_ID=xxx
-$ export APCA_API_SECRET_KEY=yyy
+Verify enviroment variabels are set
+```sh
+Get-ChildItem Env:
 ```
 
-The only dependency is alpaca-trade-api module.  You can set up the environment by
-pipenv.  If python 3 and the dependency is ready,
+Linux:
+```sh
+export APCA_API_BASE_URL=xxx
+export APCA_API_KEY_ID=xxx
+export APCA_API_SECRET_KEY=yyy
+```
 
+Windows Powershell:
+```sh
+$env:APCA_API_BASE_URL=xxx
+$env:APCA_API_KEY_ID=xxx
+$env:APCA_API_SECRET_KEY=yyy
+```
+
+Verify packages are correct by installing from pip file
+```
+$ pip install -p
+```
 ```
 $ python main.py
 ```
