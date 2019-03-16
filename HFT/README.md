@@ -5,7 +5,7 @@ It will automatically liquidate all stocks at the end of the day
 
 ## ERRORS
 - [ ] The algorithim doesnt seem to liquidate at the end of the day
-- [ ] verify the clock is working correctly in the if trigger statements
+- [ ] verify the clock is working correctly in the ```if() else if() else()``` trigger statements
 
 
 ## How to Run your Algorithm
