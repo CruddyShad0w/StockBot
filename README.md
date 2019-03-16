@@ -18,6 +18,15 @@ $env:APCA_API_BASE_URL=xxx
 $env:APCA_API_KEY_ID=xxx
 $env:APCA_API_SECRET_KEY=yyy
 ```
+To install pip dependencies when Pipfile avaliable use command
+```sh
+pip install -p
+```
+Alot of algorithims require python to be in 3.6.0  
+To change your conda eviroment use the command.
+```sh
+conda install python=x.x.x
+```
 
 ## Future Deployment ideas
 There are a number of ways to deploy your algorithm but
