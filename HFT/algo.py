@@ -10,8 +10,8 @@ import pytz
 
 # Replace these with your API connection info from the dashboard
 base_url = 'https://paper-api.alpaca.markets'
-api_key_id = 'PKQ2P1EVP13ETNHEGER3'
-api_secret = '8UwnWrkcj0bp9duzoW4XUljvTOxxlLbWw7f2CBYJ'
+api_key_id = ''
+api_secret = ''
 
 api = tradeapi.REST(
     base_url=base_url,
