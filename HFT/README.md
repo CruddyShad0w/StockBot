@@ -3,9 +3,9 @@ This is an example of a HFT stock bot.
 It will buy stocks at open based on momentum and make trades every second based on changes in the momemtum of a stock.
 It will automatically liquidate all stocks at the end of the day
 
-###ERRORS
-- [] The algorithim doesnt seem to liquidate at the end of the day
-- [] verify the clock is working correctly in the if trigger statements
+## ERRORS
+- [ ] The algorithim doesnt seem to liquidate at the end of the day
+- [ ] verify the clock is working correctly in the if trigger statements
 
 
 ## How to Run your Algorithm
