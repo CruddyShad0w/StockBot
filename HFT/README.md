@@ -5,12 +5,13 @@ It will automatically liquidate all stocks at the end of the day
 
 ## ERRORS
 - [ ] The algorithim doesnt seem to liquidate at the end of the day
+    - working on solution. Repalced if statment to match recent example repository changes.
 - [ ] verify the clock is working correctly in the ```if() else if() else()``` trigger statements
 
 
 ## How to Run your Algorithm
-All you need to do is to set broker setting, and if you are
-using Alpaca (default), you can set the following.
+First you need to set your enviroment variables for the rest api.
+If you see an error reffering to the rest.api() call this is most likely the origin. 
 
 Linux:
 ```sh

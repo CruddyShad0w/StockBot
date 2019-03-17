@@ -9,10 +9,8 @@ in a short time. Since the universe is SP500 which means there is some fundament
 the belief is that the price should be recovered to some extent.
 
 ## How to run
-Verify enviroment variabels are set
-```sh
-Get-ChildItem Env:
-```
+First you need to set your enviroment variables for the rest api.
+If you see an error reffering to the rest.api() call this is most likely the origin. 
 
 Linux:
 ```sh
@@ -22,6 +20,11 @@ export APCA_API_SECRET_KEY=yyy
 ```
 
 Windows Powershell:
+Verify enviroment variabels are set
+```sh
+Get-ChildItem Env:
+```
+
 ```sh
 $env:APCA_API_BASE_URL=xxx
 $env:APCA_API_KEY_ID=xxx
@@ -37,10 +40,6 @@ $ python main.py
 ```
 
 That's it.
-
-Also, this repository is set up for Heroku.  If you have a Heroku account, create a new
-app and run this as an application. It is only one worker app so make sure you set up
-worker type app.
 
 
 ## Cutomization

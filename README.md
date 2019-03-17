@@ -6,6 +6,9 @@ It contains nested folders with multiple stock bots as well as a few simple algo
 All you need to do is to set broker setting, and if you are
 using Alpaca (default), you can set the following.
 
+This will set your enviroment variables for the rest api.
+If you see an error reffering to the rest.api() call this is most likely the origin. 
+
 Linux:
 ```sh
 export APCA_API_BASE_URL=xxx
@@ -22,7 +25,12 @@ To install pip dependencies when Pipfile avaliable use command
 ```sh
 pip install -p
 ```
-Alot of algorithims require python to be in 3.6.0  
+If pip command fails use a text editor to open the Pipfile.
+In the Pipfile you will neeed to manually pip install the dependency. 
+```sh
+pip install <dependency>==x.x.x
+```
+Alot of algorithims require python to be in 3.6.8  
 To change your conda eviroment use the command.
 ```sh
 conda install python=x.x.x
