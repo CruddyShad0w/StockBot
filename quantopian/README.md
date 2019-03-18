@@ -43,6 +43,6 @@ DEPENDENCIES:
 pandas = "==0.22"
 alpaca-trade-api = "==0.19"
 pipeline-live = "==0.1.4"
-pylivetrader = "==0.0.13"
+pylivetrader = "*"
 ipython = "*"
 ```
